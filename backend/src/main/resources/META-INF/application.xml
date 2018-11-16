@@ -1,0 +1,11 @@
+ <module>
+
+      <web>
+
+         <web-uri>backend.war</web-uri>
+
+         <context-root>/backend</context-root>
+
+      </web>
+
+   </module>
