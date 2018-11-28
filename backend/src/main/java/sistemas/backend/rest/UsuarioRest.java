@@ -7,17 +7,18 @@ import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import sistemas.backend.business.UsuarioBC;
 import sistemas.backend.entity.Usuario;
 
 /**
- * REST que retorna Orgaos de Justica da View
+ * REST dados do usuario
  * 
  * 
- * @since 24/05/2018
- * @author Vinicius Lessa Costa - vinicius.costa@serpro.gov.br
+ * @since 28/11/2018
+ * @author Vinicius
  */
 @ApplicationScoped
 @Path("backend")
@@ -34,4 +35,13 @@ public class UsuarioRest {
 	public List<Usuario> listUsuarios() {
 		return usuarioBC.listarUsuarios();
 	}
+
+	@GET
+	@Path("/usuario/cod/{cod}")
+	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
+	@Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
+	public List<Usuario> listUsuariosPorCodigo(@PathParam("cod") int codigo) {
+		return usuarioBC.listarUsuarios(codigo);
+	}
+
 }

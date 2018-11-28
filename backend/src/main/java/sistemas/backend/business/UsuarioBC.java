@@ -13,9 +13,11 @@ public class UsuarioBC {
 	private UsuarioDAO usuarioDAO;
 
 	public List<Usuario> listarUsuarios() {
-
 		return usuarioDAO.listarUsuarios();
+	}
 
+	public List<Usuario> listarUsuarios(int codigo) {
+		return usuarioDAO.listarUsuariosPorCodigo(codigo);
 	}
 
 }
